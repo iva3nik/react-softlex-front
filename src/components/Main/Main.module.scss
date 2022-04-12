@@ -1,0 +1,14 @@
+.main {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  &__title {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__task {
+    margin-bottom: 12px;
+  }
+}
