@@ -18,7 +18,7 @@ const mockupTasks = [
     text: "some text for this task",
     status: 0,
     name: "Misha",
-    email: "misha@ya.ru",
+    email: "amisha@ya.ru",
     id: "1",
   },
   {
@@ -26,7 +26,7 @@ const mockupTasks = [
     text: "some text for this task",
     status: 11,
     name: "Sasha",
-    email: "sasha@ya.ru",
+    email: "tasha@ya.ru",
     id: "3",
   },
   {
@@ -41,8 +41,8 @@ const mockupTasks = [
     title: "task 5",
     text: "some text for this task",
     status: 0,
-    name: "Ivan",
-    email: "ivan@ya.ru",
+    name: "Nikolai",
+    email: "wooden@ya.ru",
     id: "5",
   },
 ];

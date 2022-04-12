@@ -4,4 +4,10 @@
   border: 1px solid white;
   border-radius: 8px;
   padding: 10px;
+  transition: 0.3s linear;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 14px 3px rgba(193, 210, 233, 0.5);
+  }
 }
