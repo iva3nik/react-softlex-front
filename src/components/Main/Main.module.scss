@@ -11,4 +11,19 @@
   &__task {
     margin-bottom: 12px;
   }
+
+  &__button {
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 8px 48px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    color: white;
+    transition: 0.3s linear;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
 }

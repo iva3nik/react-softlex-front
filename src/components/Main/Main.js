@@ -4,8 +4,8 @@ import Task from "../Task/Task";
 
 import s from "./Main.module.scss";
 
-const Main = ({ listTasks }) => {
-  const [filteredList, setFilteredList] = useState(listTasks);
+const Main = ({ listTasks, openPopup, handledeleteTask }) => {
+  const [filteredList, setFilteredList] = useState([]);
   const [typeFilter, setTypeFilter] = useState("default");
 
   const filterByStatus = () => {
@@ -15,16 +15,22 @@ const Main = ({ listTasks }) => {
   const filterByString = () => {
     setFilteredList(
       [...filteredList].sort((a, b) => {
-        if (a[typeFilter] < b[typeFilter]) {
+        if (a[typeFilter].toLowerCase() < b[typeFilter].toLowerCase()) {
           return -1;
         }
-        if (a[typeFilter] > b[typeFilter]) {
+        if (a[typeFilter].toLowerCase() > b[typeFilter].toLowerCase()) {
           return 1;
         }
         return 0;
       })
     );
   };
+
+  useEffect(() => {
+    setTypeFilter("default");
+    handleFilterOfList();
+    setFilteredList(listTasks);
+  }, [listTasks]);
 
   const handleFilterOfList = () => {
     if (typeFilter === "status") {
@@ -40,8 +46,8 @@ const Main = ({ listTasks }) => {
     setTypeFilter(type);
   };
 
-  const handledeleteTask = (id) => {
-    setFilteredList([...filteredList].filter((i) => i.id !== id));
+  const deleteTask = (id) => {
+    handledeleteTask(id);
   };
 
   useEffect(() => {
@@ -51,6 +57,9 @@ const Main = ({ listTasks }) => {
   return (
     <div className={s.main}>
       <h2 className={s.main__title}>Список задач</h2>
+      <button className={s.main__button} onClick={openPopup}>
+        Добавить задачу
+      </button>
       <Dropdown typeFilter={typeFilter} hadnleTypeFilter={hadnleTypeFilter} />
       {filteredList.length &&
         filteredList.map((task, index) => {
@@ -63,7 +72,7 @@ const Main = ({ listTasks }) => {
                 name={task.name}
                 status={task.status}
                 id={task.id}
-                handledeleteTask={handledeleteTask}
+                handledeleteTask={deleteTask}
               />
             </div>
           );
