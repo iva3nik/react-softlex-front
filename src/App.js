@@ -11,7 +11,7 @@ const mockupTasks = [
     status: 1,
     name: "Ivan",
     email: "ivan@ya.ru",
-    id: "2",
+    id: "1",
   },
   {
     title: "task 2",
@@ -19,7 +19,7 @@ const mockupTasks = [
     status: 0,
     name: "Misha",
     email: "amisha@ya.ru",
-    id: "1",
+    id: "2",
   },
   {
     title: "task 3",

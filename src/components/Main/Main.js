@@ -32,6 +32,10 @@ const Main = ({ listTasks }) => {
     setTypeFilter(type);
   };
 
+  const handledeleteTask = (id) => {
+    setFilteredList([...filteredList].filter((i) => i.id !== id));
+  };
+
   useEffect(() => {
     handleFilterOfList();
   }, [typeFilter]);
@@ -50,6 +54,8 @@ const Main = ({ listTasks }) => {
                 email={task.email}
                 name={task.name}
                 status={task.status}
+                id={task.id}
+                handledeleteTask={handledeleteTask}
               />
             </div>
           );
