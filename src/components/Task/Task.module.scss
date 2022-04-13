@@ -16,11 +16,15 @@
     justify-content: end;
   }
 
-  &__button {
-    cursor: pointer;
-  }
-
   &__buttons_type_admin {
     display: none;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    &:last-of-type {
+      margin-left: 8px;
+    }
   }
 }

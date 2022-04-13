@@ -8,21 +8,29 @@ const Main = ({ listTasks }) => {
   const [filteredList, setFilteredList] = useState(listTasks);
   const [typeFilter, setTypeFilter] = useState("default");
 
+  const filterByStatus = () => {
+    setFilteredList([...filteredList].sort((a, b) => a.status - b.status));
+  };
+
+  const filterByString = () => {
+    setFilteredList(
+      [...filteredList].sort((a, b) => {
+        if (a[typeFilter] < b[typeFilter]) {
+          return -1;
+        }
+        if (a[typeFilter] > b[typeFilter]) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+  };
+
   const handleFilterOfList = () => {
     if (typeFilter === "status") {
-      setFilteredList([...filteredList].sort((a, b) => a.status - b.status));
+      filterByStatus();
     } else if (typeFilter === "email" || typeFilter === "name") {
-      setFilteredList(
-        [...filteredList].sort((a, b) => {
-          if (a[typeFilter] < b[typeFilter]) {
-            return -1;
-          }
-          if (a[typeFilter] > b[typeFilter]) {
-            return 1;
-          }
-          return 0;
-        })
-      );
+      filterByString();
     } else {
       setFilteredList(listTasks);
     }
@@ -42,7 +50,7 @@ const Main = ({ listTasks }) => {
 
   return (
     <div className={s.main}>
-      <h2 className={s.main__title}>List of tasks</h2>
+      <h2 className={s.main__title}>Список задач</h2>
       <Dropdown typeFilter={typeFilter} hadnleTypeFilter={hadnleTypeFilter} />
       {filteredList.length &&
         filteredList.map((task, index) => {

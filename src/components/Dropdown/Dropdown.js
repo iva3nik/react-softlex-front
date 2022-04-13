@@ -27,7 +27,7 @@ const Dropdown = ({ typeFilter, hadnleTypeFilter }) => {
   const openingLine = () => (
     <>
       <div className={s.dropdown__string} onClick={hadnleOpenForms}>
-        <p>Фильтрация по - {typeFilter}</p>
+        <h3 className={s.dropdown__title}>Фильтрация по - {typeFilter}</h3>
         <button className={s.dropdown__button}>
           {open ? <SVGCloseButton /> : <SVGOpenButton />}
         </button>
@@ -40,9 +40,13 @@ const Dropdown = ({ typeFilter, hadnleTypeFilter }) => {
       {open ? (
         <>
           {openingLine()}
-          <ul>
+          <ul className={s.dropdown__list}>
             {dropdown.map((i, index) => (
-              <li key={index} onClick={() => hadnleFilter(i.type)}>
+              <li
+                className={s.dropdown__point}
+                key={index}
+                onClick={() => hadnleFilter(i.type)}
+              >
                 {i.type}
               </li>
             ))}

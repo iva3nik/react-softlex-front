@@ -16,9 +16,9 @@ const Task = (props) => {
           [s.task__buttons_type_admin]: name !== "admin",
         })}
       >
-        <button className={s.task__button}>Edit task</button>
+        <button className={s.task__button}>Edit</button>
         <button className={s.task__button} onClick={() => deleteTask(props.id)}>
-          Delete task
+          Delete
         </button>
       </div>
       <h2 className={s.task__title}>Название задачи : {props.title}</h2>
