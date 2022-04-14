@@ -4,7 +4,7 @@ import Task from "../Task/Task";
 
 import s from "./Main.module.scss";
 
-const Main = ({ listTasks, openPopup, handledeleteTask }) => {
+const Main = ({ listTasks, openPopup, handledeleteTask, currentUser }) => {
   const [filteredList, setFilteredList] = useState([]);
   const [typeFilter, setTypeFilter] = useState("default");
 
@@ -66,6 +66,7 @@ const Main = ({ listTasks, openPopup, handledeleteTask }) => {
           return (
             <div className={s.main__task} key={index}>
               <Task
+                task={task}
                 text={task.text}
                 title={task.title}
                 email={task.email}
@@ -73,6 +74,7 @@ const Main = ({ listTasks, openPopup, handledeleteTask }) => {
                 status={task.status}
                 id={task.id}
                 handledeleteTask={deleteTask}
+                currentUser={currentUser}
               />
             </div>
           );

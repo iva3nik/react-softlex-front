@@ -4,16 +4,15 @@ import cn from "classnames";
 import s from "./Task.module.scss";
 
 const Task = (props) => {
-  const [name, setName] = useState("admin");
-
   const deleteTask = (id) => {
     props.handledeleteTask(id);
   };
+
   return (
     <div className={s.task}>
       <div
         className={cn(s.task__buttons, {
-          [s.task__buttons_type_admin]: name !== "admin",
+          [s.task__buttons_type_admin]: props.currentUser.name !== "admin",
         })}
       >
         <button className={s.task__button}>Edit</button>
