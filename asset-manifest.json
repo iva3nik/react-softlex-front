@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-softlex-front/static/css/main.e6d214cf.css",
+    "main.js": "/react-softlex-front/static/js/main.b0e867b5.js",
+    "index.html": "/react-softlex-front/index.html",
+    "main.e6d214cf.css.map": "/react-softlex-front/static/css/main.e6d214cf.css.map",
+    "main.b0e867b5.js.map": "/react-softlex-front/static/js/main.b0e867b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6d214cf.css",
+    "static/js/main.b0e867b5.js"
+  ]
+}
