@@ -4,7 +4,7 @@ Cтек: JavaScript / React.js / HTML / CSS / Git
 
 # Ссылка на проект
 
-https://iva3nik.github.io/react-softlex/
+https://iva3nik.github.io/react-softlex-front/
 
 Проект представляет собой одностраничный сайт. Можно создавать задачи и фильтровать список по разным параметрам. Админ может удалять задачи.
 
